@@ -11,7 +11,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@400;600;700&family=Inconsolata:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <!-- Font Awesome (icons) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -26,7 +26,11 @@
 ══════════════════════════════════════════ -->
 <nav id="navbar">
   <div class="nav-inner">
-    <a class="nav-logo" href="#hero">Fresh<span>Minute</span></a>
+    <a class="nav-logo" href="#hero">
+      <!-- Logo image (nahraď src cestou k souboru, až budeš mít PNG/SVG) -->
+      <!-- <img src="images/logo-freshminute-white.svg" alt="Fresh Minute" class="nav-logo-img" /> -->
+      Fresh<span>Minute</span>
+    </a>
 
     <ul class="nav-links">
       <li><a href="#shows"   data-nav="shows">
@@ -99,7 +103,7 @@
 
   <div class="hero-content">
     <p class="hero-genre">funk · soul · jazz / Zlín</p>
-    <h1 class="hero-name">Fresh<span>Minute</span></h1>
+    <h1 class="hero-name">Fresh<br><span>Minute</span></h1>
 
     <p class="hero-tagline">
       <span data-lang="cs">Instrumentální kapela ze Zlína</span>
@@ -123,10 +127,16 @@
       </a>
     </div>
 
-    <a href="#shows" class="btn btn-primary">
-      <span data-lang="cs">Nadcházející koncerty</span>
-      <span data-lang="en">Upcoming shows</span>
-    </a>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a href="#shows" class="btn btn-primary">
+        <span data-lang="cs">Nadcházející koncerty</span>
+        <span data-lang="en">Upcoming shows</span>
+      </a>
+      <a href="#about" class="btn btn-outline">
+        <span data-lang="cs">O kapele</span>
+        <span data-lang="en">About us</span>
+      </a>
+    </div>
   </div>
 
   <div class="hero-scroll">

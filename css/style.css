@@ -1,25 +1,34 @@
 /* =============================================
    FRESH MINUTE — stylesheet
-   Design: based on Symphonize / idepix.cz
-   Fonts: Advent Pro (headings) · Inconsolata (body)
+   Brand palette: navy · orange · yellow · blue
+   Fonts: Fredoka (headings) · Nunito (body)
    ============================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@400;600;700&family=Inconsolata:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700&display=swap');
 
 /* ── CSS Variables ────────────────────────────── */
 :root {
-  --color-dark:    #1D0F33;
-  --color-accent:  #EC5252;
-  --color-accent2: #D34B4B;
-  --color-white:   #FFFFFF;
-  --color-text:    #7A7A7A;
-  --color-light:   #E2E2E2;
-  --color-gray:    #999999;
-  --color-border:  #CCCCCC;
-  --color-bg-alt:  #f7f7f7;
+  /* Brand palette (from logo + pattern) */
+  --color-dark:    #1C3B58;   /* deep navy */
+  --color-orange:  #F07030;   /* warm orange */
+  --color-orange2: #D85E20;   /* orange hover */
+  --color-yellow:  #FFD000;   /* bright yellow */
+  --color-blue:    #6090C0;   /* medium blue */
+  --color-red:     #C42E30;   /* red (logo variant) */
 
-  --font-heading: 'Advent Pro', sans-serif;
-  --font-body:    'Inconsolata', monospace;
+  /* Aliases used by components */
+  --color-accent:  var(--color-orange);
+  --color-accent2: var(--color-orange2);
+
+  --color-white:   #FFFFFF;
+  --color-text:    #4A5E72;
+  --color-light:   #E4EDF5;
+  --color-gray:    #8A9AAA;
+  --color-border:  #C8D8E8;
+  --color-bg-alt:  #F0F5FA;
+
+  --font-heading: 'Fredoka', sans-serif;
+  --font-body:    'Nunito', sans-serif;
 
   --container: 1140px;
   --nav-height: 80px;
@@ -105,7 +114,14 @@ section { padding: 90px 0; }
   background: var(--color-dark);
   color: var(--color-white);
 }
-.btn-dark:hover { background: #2d1850; }
+.btn-dark:hover { background: #153048; }
+
+/* Yellow accent button */
+.btn-yellow {
+  background: var(--color-yellow);
+  color: var(--color-dark);
+}
+.btn-yellow:hover { background: #e6bb00; }
 
 /* ── NAV ─────────────────────────────────────── */
 #navbar {
@@ -135,12 +151,20 @@ section { padding: 90px 0; }
   font-family: var(--font-heading);
   font-size: 26px;
   font-weight: 700;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--color-white);
   line-height: 1;
+  display: flex;
+  align-items: center;
 }
-.nav-logo span { color: var(--color-accent); }
+.nav-logo span { color: var(--color-orange); }
+/* When using image logo: */
+.nav-logo-img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
 
 .nav-links {
   display: flex;
@@ -260,24 +284,25 @@ section { padding: 90px 0; }
 }
 .hero-genre {
   font-family: var(--font-heading);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: var(--color-yellow);
   margin-bottom: 16px;
 }
 .hero-name {
   font-family: var(--font-heading);
-  font-size: clamp(64px, 10vw, 120px);
-  font-weight: 600;
+  font-size: clamp(64px, 10vw, 130px);
+  font-weight: 700;
   text-transform: uppercase;
-  line-height: 1;
-  letter-spacing: 4px;
+  line-height: 0.95;
+  letter-spacing: 2px;
   color: var(--color-white);
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 }
-.hero-name span { color: var(--color-accent); }
+/* "Minute" in orange — navy+orange combo from brand */
+.hero-name span { color: var(--color-orange); }
 .hero-tagline {
   font-family: var(--font-body);
   font-size: 18px;
@@ -296,17 +321,18 @@ section { padding: 90px 0; }
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
-  border: 1px solid rgba(255,255,255,0.3);
+  width: 46px;
+  height: 46px;
+  border: 2px solid rgba(255,255,255,0.3);
   color: var(--color-white);
   font-size: 18px;
+  border-radius: 4px;
   transition: all 0.2s;
 }
 .hero-socials a:hover {
-  border-color: var(--color-accent);
-  background: var(--color-accent);
-  color: var(--color-white);
+  border-color: var(--color-yellow);
+  background: var(--color-yellow);
+  color: var(--color-dark);
 }
 .hero-socials a.disabled {
   opacity: 0.35;
@@ -374,7 +400,7 @@ section { padding: 90px 0; }
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: var(--color-orange);
 }
 .show-info h3 {
   font-family: var(--font-heading);
@@ -686,7 +712,7 @@ section { padding: 90px 0; }
   font-size: 18px;
   transition: background 0.2s;
 }
-.contact-socials a:hover { background: var(--color-accent); }
+.contact-socials a:hover { background: var(--color-orange); }
 .contact-socials a.disabled {
   opacity: 0.35;
   cursor: default;
@@ -771,11 +797,16 @@ footer {
 /* ── Decorative divider ──────────────────────── */
 .section-divider {
   width: 60px;
-  height: 3px;
-  background: var(--color-accent);
+  height: 4px;
+  background: var(--color-orange);
   margin: 16px 0 40px;
 }
 .section-divider.center { margin: 16px auto 40px; }
+/* On dark bg use yellow */
+#video .section-divider,
+#about .section-divider {
+  background: var(--color-yellow);
+}
 
 /* ── Hidden content (JS-powered) ─────────────── */
 [data-lang] { display: none; }
