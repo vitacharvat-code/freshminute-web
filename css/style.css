@@ -1,10 +1,27 @@
 /* =============================================
-   FRESH MINUTE — stylesheet v2 (funky retro)
+   FRESH MINUTE — stylesheet v3 (brand fonts)
    Palette: navy · orange · yellow · blue
-   Fonts: Fredoka (headings) · Nunito (body)
+   Fonts: Blenny Black (display) · Clarendon (body)
    ============================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap');
+/* ── Brand fonts ─────────────────────────────── */
+@font-face {
+  font-family: 'Blenny';
+  src: url('../fonts/Blenny-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Clarendon';
+  src: url('../fonts/Clarendon-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Fallback Google Font while brand fonts load */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
 
 /* ── CSS Variables ───────────────────────────── */
 :root {
@@ -20,8 +37,10 @@
   --text-muted: #6A7E90;
   --border:  #C8D8E8;
 
-  --font-heading: 'Fredoka', sans-serif;
-  --font-body:    'Nunito', sans-serif;
+  --font-display: 'Blenny', 'Impact', sans-serif;   /* hero, big titles */
+  --font-heading: 'Blenny', 'Impact', sans-serif;   /* section headings */
+  --font-serif:   'Clarendon', Georgia, serif;       /* body, nav links */
+  --font-body:    'Clarendon', Georgia, serif;
 
   --container: 1180px;
   --nav-height: 76px;
@@ -82,19 +101,20 @@ span[data-lang].visible { display: inline; }
 
 /* Logo */
 .nav-logo {
-  font-family: var(--font-heading);
-  font-size: 28px;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 900;
   letter-spacing: 1px;
   color: var(--white);
   line-height: 1;
   display: flex;
   align-items: center;
-  gap: 0;
+  gap: 12px;
 }
 .nav-logo .logo-fresh { color: var(--white); }
 .nav-logo .logo-minute { color: var(--yellow); }
-.nav-logo-img { height: 42px; width: auto; display: block; }
+.nav-logo-img { height: 44px; width: auto; display: block; }
+.nav-logo-text { display: flex; align-items: baseline; gap: 0; }
 
 /* Nav links */
 .nav-links {
@@ -103,9 +123,10 @@ span[data-lang].visible { display: inline; }
   gap: 28px;
 }
 .nav-links a {
-  font-family: var(--font-heading);
-  font-size: 16px;
-  font-weight: 600;
+  font-family: var(--font-serif);
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
   color: rgba(255,255,255,0.85);
   transition: color 0.2s;
 }
@@ -116,9 +137,10 @@ span[data-lang].visible { display: inline; }
   display: flex;
   align-items: center;
   gap: 2px;
-  font-family: var(--font-heading);
-  font-size: 14px;
+  font-family: var(--font-serif);
+  font-size: 13px;
   font-weight: 700;
+  letter-spacing: 1px;
 }
 .lang-btn {
   color: rgba(255,255,255,0.45);
@@ -265,32 +287,32 @@ span[data-lang].visible { display: inline; }
 
 .hero-tag {
   display: inline-block;
-  font-family: var(--font-heading);
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 3px;
+  font-family: var(--font-serif);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 4px;
   text-transform: uppercase;
   background: var(--yellow);
   color: var(--navy);
-  padding: 6px 18px;
+  padding: 8px 20px;
   margin-bottom: 28px;
 }
 
 .hero-title {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  line-height: 0.9;
-  letter-spacing: -1px;
-  margin-bottom: 32px;
+  font-family: var(--font-display);
+  font-weight: 900;
+  line-height: 0.88;
+  letter-spacing: 2px;
+  margin-bottom: 36px;
 }
 .hero-title .line-fresh {
   display: block;
-  font-size: clamp(90px, 16vw, 180px);
+  font-size: clamp(100px, 18vw, 210px);
   color: var(--white);
 }
 .hero-title .line-minute {
   display: block;
-  font-size: clamp(80px, 14vw, 160px);
+  font-size: clamp(90px, 16vw, 190px);
   color: var(--orange);
 }
 
@@ -370,10 +392,11 @@ span[data-lang].visible { display: inline; }
 ══════════════════════════════════════════════ */
 .btn {
   display: inline-block;
-  font-family: var(--font-heading);
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
+  font-family: var(--font-serif);
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   padding: 16px 36px;
   border: none;
   cursor: pointer;
@@ -427,9 +450,9 @@ span[data-lang].visible { display: inline; }
   margin-bottom: 52px;
 }
 .section-eyebrow {
-  font-family: var(--font-heading);
-  font-size: 14px;
-  font-weight: 700;
+  font-family: var(--font-serif);
+  font-size: 13px;
+  font-weight: 400;
   letter-spacing: 3px;
   text-transform: uppercase;
 }
@@ -438,11 +461,11 @@ span[data-lang].visible { display: inline; }
 .section-eyebrow.blue   { color: var(--blue); }
 
 .section-heading {
-  font-family: var(--font-heading);
-  font-size: clamp(42px, 6vw, 72px);
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.5px;
+  font-family: var(--font-display);
+  font-size: clamp(48px, 7vw, 88px);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: 1px;
 }
 .section-heading.dark  { color: var(--navy); }
 .section-heading.white { color: var(--white); }
@@ -492,25 +515,25 @@ span[data-lang].visible { display: inline; }
 
 .show-date { text-align: center; }
 .show-date .day {
-  font-family: var(--font-heading);
-  font-size: 52px;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 56px;
+  font-weight: 900;
   color: var(--navy);
   line-height: 1;
 }
 .show-date .month {
-  font-family: var(--font-heading);
-  font-size: 13px;
-  font-weight: 700;
+  font-family: var(--font-serif);
+  font-size: 12px;
+  font-weight: 400;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--orange);
 }
 
 .show-info h3 {
-  font-family: var(--font-heading);
+  font-family: var(--font-display);
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 900;
   color: var(--navy);
   margin-bottom: 4px;
 }
@@ -743,7 +766,7 @@ span[data-lang].visible { display: inline; }
 }
 
 .bio-text {
-  font-family: var(--font-body);
+  font-family: var(--font-serif);
   font-size: 16px;
   line-height: 1.85;
   color: rgba(255,255,255,0.72);
@@ -972,11 +995,16 @@ footer::before {
   text-align: center;
 }
 .footer-logo {
-  font-family: var(--font-heading);
-  font-size: 28px;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 900;
+  letter-spacing: 2px;
   color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
+.footer-logo img { height: 52px; width: auto; }
 .footer-logo .logo-minute { color: var(--yellow); }
 .footer-links {
   display: flex;
@@ -985,18 +1013,19 @@ footer::before {
   justify-content: center;
 }
 .footer-links a {
-  font-family: var(--font-heading);
-  font-size: 15px;
-  font-weight: 600;
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1px;
   color: rgba(255,255,255,0.5);
   transition: color 0.2s;
 }
 .footer-links a:hover { color: var(--yellow); }
 .footer-copy {
-  font-family: var(--font-body);
-  font-size: 13px;
+  font-family: var(--font-serif);
+  font-size: 12px;
   color: rgba(255,255,255,0.3);
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
 }
 
 
