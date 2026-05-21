@@ -225,36 +225,39 @@ span[data-lang].visible { display: inline; }
   mix-blend-mode: luminosity;
 }
 
-/* Geometric decorations */
-.hero-deco {
+/* Brand pattern — right side of hero */
+.hero-pattern {
   position: absolute;
-  inset: 0;
+  right: -60px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: clamp(300px, 42vw, 560px);
+  height: clamp(300px, 42vw, 560px);
   pointer-events: none;
-  overflow: hidden;
+  opacity: 0.55;
+  filter: saturate(1.1);
 }
-/* Big circle top-right */
-.hero-deco::before {
-  content: '';
-  position: absolute;
-  top: -120px;
-  right: -120px;
-  width: 500px;
-  height: 500px;
-  border: 40px solid var(--orange);
-  border-radius: 50%;
-  opacity: 0.25;
+.hero-pattern img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
-/* Medium circle bottom-left */
-.hero-deco::after {
-  content: '';
+
+/* Small pattern — bottom-left accent */
+.hero-pattern-sm {
   position: absolute;
-  bottom: -80px;
   left: -80px;
-  width: 320px;
-  height: 320px;
-  background: var(--yellow);
-  border-radius: 50%;
-  opacity: 0.12;
+  bottom: -80px;
+  width: 260px;
+  height: 260px;
+  pointer-events: none;
+  opacity: 0.2;
+  transform: rotate(180deg);
+}
+.hero-pattern-sm img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 /* Horizontal stripe accent */
 .hero-stripe {
@@ -486,6 +489,39 @@ span[data-lang].visible { display: inline; }
 .section-underline.navy   { background: var(--navy); }
 
 
+/* ── Pattern divider strip ───────────────────── */
+.pattern-strip {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+  background: var(--navy);
+  position: relative;
+}
+.pattern-strip img {
+  /* tile the SVG horizontally */
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  /* Tile via repeat */
+}
+.pattern-strip-inner {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+/* Repeat the pattern 4× in a row */
+.pattern-strip-inner img {
+  height: 160px;
+  width: auto;
+  flex-shrink: 0;
+  filter: saturate(1.15);
+}
+
+
 /* ══════════════════════════════════════════════
    SHOWS — white bg, bold concert rows
 ══════════════════════════════════════════════ */
@@ -627,16 +663,18 @@ span[data-lang].visible { display: inline; }
   position: relative;
   overflow: hidden;
 }
-/* Dot grid deco */
-#listen::before {
-  content: '';
+/* Brand pattern deco */
+.listen-pattern {
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-image:
-    radial-gradient(circle, rgba(28,59,88,0.12) 2px, transparent 2px);
-  background-size: 32px 32px;
+  right: -40px;
+  bottom: -40px;
+  width: 280px;
+  height: 280px;
+  opacity: 0.2;
   pointer-events: none;
+  transform: rotate(90deg);
 }
+.listen-pattern img { width: 100%; height: 100%; object-fit: contain; }
 
 .listen-inner {
   display: grid;
@@ -864,7 +902,20 @@ span[data-lang].visible { display: inline; }
 #contact {
   background: var(--white);
   padding: 100px 0;
+  position: relative;
+  overflow: hidden;
 }
+.contact-pattern {
+  position: absolute;
+  left: -60px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 240px;
+  height: 240px;
+  opacity: 0.08;
+  pointer-events: none;
+}
+.contact-pattern img { width: 100%; height: 100%; object-fit: contain; }
 
 .contact-inner {
   display: grid;
