@@ -20,8 +20,8 @@
   font-display: swap;
 }
 
-/* Fallback Google Font while brand fonts load */
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Nunito:wght@400;600;700;800&display=swap');
 
 /* ── CSS Variables ───────────────────────────── */
 :root {
@@ -37,9 +37,10 @@
   --text-muted: #6A7E90;
   --border:  #C8D8E8;
 
-  --font-display: 'Blenny', 'Impact', sans-serif;   /* hero, big titles */
-  --font-heading: 'Blenny', 'Impact', sans-serif;   /* section headings */
-  --font-serif:   'Clarendon', Georgia, serif;       /* body, nav links */
+  --font-inline:  'Bungee Inline', 'Impact', sans-serif; /* hero big title */
+  --font-display: 'Blenny', 'Impact', sans-serif;        /* section headings */
+  --font-heading: 'Blenny', 'Impact', sans-serif;
+  --font-serif:   'Clarendon', Georgia, serif;            /* nav, body */
   --font-body:    'Clarendon', Georgia, serif;
 
   --container: 1180px;
@@ -455,21 +456,21 @@ span[data-lang].visible { display: inline; }
 }
 
 .hero-title {
-  font-family: var(--font-display);
-  font-weight: 900;
+  font-family: var(--font-inline);   /* Bungee Inline — built-in retro stripe */
+  font-weight: 400;                  /* Bungee Inline má jen 400 */
   line-height: 0.88;
-  letter-spacing: 2px;
+  letter-spacing: 0px;
   margin-bottom: 36px;
 }
 .hero-title .line-fresh {
   display: block;
-  font-size: clamp(100px, 18vw, 210px);
+  font-size: clamp(100px, 17vw, 200px);
   color: var(--white);
 }
 .hero-title .line-minute {
   display: block;
-  font-size: clamp(90px, 16vw, 190px);
-  color: var(--orange);
+  font-size: clamp(88px, 15vw, 180px);
+  color: var(--yellow);
 }
 
 /* Social icons */
