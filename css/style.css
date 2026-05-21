@@ -225,59 +225,212 @@ span[data-lang].visible { display: inline; }
   mix-blend-mode: luminosity;
 }
 
-/* Brand pattern — right side of hero */
-.hero-pattern {
+/* ══════════════════════════════════════════════
+   DECORATIVE ELEMENTS — circles, dots, stripes
+   Inspired by brand pattern (Artboard 6)
+   Bold & funky — plakátový retro styl
+══════════════════════════════════════════════ */
+
+/* ── Shared base — add .deco to every decorative el ── */
+.deco {
   position: absolute;
-  right: -60px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: clamp(300px, 42vw, 560px);
-  height: clamp(300px, 42vw, 560px);
   pointer-events: none;
-  opacity: 0.55;
-  filter: saturate(1.1);
-}
-.hero-pattern img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  border-radius: 50%;
+  z-index: 0;
 }
 
-/* Small pattern — bottom-left accent */
-.hero-pattern-sm {
-  position: absolute;
-  left: -80px;
-  bottom: -80px;
-  width: 260px;
-  height: 260px;
-  pointer-events: none;
-  opacity: 0.2;
-  transform: rotate(180deg);
+/* ── HERO decorations ────────────────────────── */
+
+/* Large orange ring — top right, partially off */
+.hero-ring-orange {
+  width: 420px; height: 420px;
+  top: -80px; right: -100px;
+  border: 48px solid var(--orange);
+  opacity: 0.85;
 }
-.hero-pattern-sm img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+/* Large yellow filled circle — bottom left */
+.deco-circle-yellow-lg {
+  width: 280px; height: 280px;
+  bottom: -100px; left: -80px;
+  background: var(--yellow);
+  opacity: 0.75;
 }
-/* Horizontal stripe accent */
-.hero-stripe {
-  position: absolute;
-  bottom: 0;
-  left: 0; right: 0;
-  height: 8px;
-  background: repeating-linear-gradient(
-    90deg,
-    var(--yellow) 0px,
-    var(--yellow) 80px,
-    var(--orange) 80px,
-    var(--orange) 160px,
-    var(--blue)   160px,
-    var(--blue)   240px,
-    var(--navy)   240px,
-    var(--navy)   320px
-  );
+/* Small blue dot — left side mid */
+.deco-dot-blue {
+  width: 60px; height: 60px;
+  top: 30%; left: 4%;
+  background: var(--blue);
   opacity: 0.9;
 }
+/* Tiny orange dot — right side low */
+.deco-dot-orange-sm {
+  width: 28px; height: 28px;
+  bottom: 22%; right: 8%;
+  background: var(--orange);
+  opacity: 1;
+}
+/* Tiny yellow dot — left mid-low */
+.deco-dot-yellow-sm {
+  width: 18px; height: 18px;
+  bottom: 35%; left: 9%;
+  background: var(--yellow);
+  opacity: 1;
+}
+
+/* Horizontal coloured stripes — bottom edge */
+.hero-stripes {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  display: flex;
+  height: 10px;
+  border-radius: 0;
+}
+.hero-stripes span {
+  display: block;
+  flex: 1;
+}
+.hero-stripes span:nth-child(1) { background: var(--yellow); }
+.hero-stripes span:nth-child(2) { background: var(--orange); }
+.hero-stripes span:nth-child(3) { background: var(--blue); }
+.hero-stripes span:nth-child(4) { background: var(--yellow); }
+.hero-stripes span:nth-child(5) { background: var(--orange); }
+.hero-stripes span:nth-child(6) { background: var(--blue); }
+.hero-stripes span:nth-child(7) { background: var(--yellow); }
+.hero-stripes span:nth-child(8) { background: var(--orange); }
+
+
+/* ── SHOWS decorations (white bg) ───────────── */
+#shows { position: relative; overflow: hidden; }
+
+/* Blue ring — top right */
+.shows-ring {
+  width: 300px; height: 300px;
+  top: -100px; right: -80px;
+  border: 36px solid var(--blue);
+  opacity: 0.18;
+}
+/* Orange dot cluster */
+.shows-dot-1 {
+  width: 44px; height: 44px;
+  bottom: 40px; left: 40px;
+  background: var(--orange);
+  opacity: 0.18;
+}
+.shows-dot-2 {
+  width: 22px; height: 22px;
+  bottom: 60px; left: 96px;
+  background: var(--yellow);
+  opacity: 0.25;
+}
+
+
+/* ── VIDEO decorations (navy bg) ────────────── */
+/* Yellow ring already via ::before — replace it */
+#video::before { display: none; }
+
+.video-ring {
+  width: 360px; height: 360px;
+  top: 50%; left: -100px;
+  transform: translateY(-50%);
+  border: 50px solid var(--yellow);
+  opacity: 0.22;
+}
+.video-dot {
+  width: 80px; height: 80px;
+  bottom: 40px; right: 60px;
+  background: var(--orange);
+  opacity: 0.35;
+}
+
+
+/* ── LISTEN decorations (yellow bg) ─────────── */
+.listen-pattern { display: none; } /* remove old */
+
+.listen-ring {
+  width: 320px; height: 320px;
+  top: -80px; right: -80px;
+  border: 44px solid var(--navy);
+  opacity: 0.25;
+}
+.listen-dot-1 {
+  width: 60px; height: 60px;
+  bottom: 30px; left: 30px;
+  background: var(--orange);
+  opacity: 0.75;
+}
+.listen-dot-2 {
+  width: 30px; height: 30px;
+  bottom: 70px; left: 108px;
+  background: var(--navy);
+  opacity: 0.5;
+}
+
+
+/* ── ABOUT decorations (navy bg) ────────────── */
+#about::after { display: none; } /* remove old blob */
+
+.about-ring {
+  width: 380px; height: 380px;
+  bottom: -120px; right: -100px;
+  border: 52px solid var(--orange);
+  opacity: 0.28;
+}
+.about-dot-1 {
+  width: 50px; height: 50px;
+  top: 60px; left: 40px;
+  background: var(--yellow);
+  opacity: 0.6;
+}
+.about-dot-2 {
+  width: 22px; height: 22px;
+  top: 120px; left: 108px;
+  background: var(--blue);
+  opacity: 0.7;
+}
+
+
+/* ── CONTACT decorations (white bg) ─────────── */
+.contact-pattern { display: none; } /* remove old */
+
+.contact-ring {
+  width: 340px; height: 340px;
+  bottom: -120px; right: -90px;
+  border: 44px solid var(--orange);
+  opacity: 0.14;
+}
+.contact-dot-1 {
+  width: 52px; height: 52px;
+  top: 50px; right: 80px;
+  background: var(--yellow);
+  opacity: 0.5;
+}
+.contact-dot-2 {
+  width: 24px; height: 24px;
+  top: 118px; right: 148px;
+  background: var(--blue);
+  opacity: 0.45;
+}
+
+
+/* Horizontal coloured stripes — section divider */
+.stripe-divider {
+  width: 100%;
+  display: flex;
+  height: 12px;
+  overflow: hidden;
+}
+.stripe-divider span {
+  display: block;
+  flex: 1;
+}
+.stripe-divider span:nth-child(1) { background: var(--navy); }
+.stripe-divider span:nth-child(2) { background: var(--orange); }
+.stripe-divider span:nth-child(3) { background: var(--yellow); }
+.stripe-divider span:nth-child(4) { background: var(--blue); }
+.stripe-divider span:nth-child(5) { background: var(--orange); }
+.stripe-divider span:nth-child(6) { background: var(--yellow); }
+.stripe-divider span:nth-child(7) { background: var(--navy); }
+.stripe-divider span:nth-child(8) { background: var(--blue); }
 
 /* Hero content */
 .hero-content {
