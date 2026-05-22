@@ -1271,3 +1271,39 @@ footer::before {
   .hero-ctas .btn { width: 100%; max-width: 280px; }
   .members-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
 }
+
+/* ══════════════════════════════════════════════
+   BUNGEE INLINE FIX
+   Font existuje pouze v tloušťce 400.
+   Při font-weight ≠ 400 browser syntetizuje tučné
+   písmo, které přetře vnitřní čárky (inline efekt).
+══════════════════════════════════════════════ */
+.nav-logo,
+.nav-links a,
+.lang-btn,
+.nav-mobile a,
+.hero-tag,
+.hero-scroll,
+.btn,
+.section-eyebrow,
+.section-heading,
+.show-date .day,
+.show-date .month,
+.show-info h3,
+.shows-empty p,
+.video-placeholder,
+.spotify-placeholder h3,
+.album-info h4,
+.members-label,
+.member-instrument,
+.member-name,
+.bio-genre-tag,
+.contact-detail h4,
+.contact-detail p,
+.contact-detail a,
+.form-group label,
+.footer-logo,
+.footer-links a,
+.footer-copy {
+  font-weight: 400 !important;
+}
