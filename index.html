@@ -1,590 +1,363 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fresh Minute — funk · soul · jazz / Zlín</title>
-  <meta name="description" content="Fresh Minute – instrumentální funk-soulová kapela ze Zlína. Koncerty, hudba, videa." />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fresh Minute – Funk Soul Jazz Zlín</title>
+  <link rel="icon" href="images/FM_cervena.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css?v=2">
 </head>
 <body>
 
-<!-- ╔══════════════════════════════════════════╗
-     ║  NAV                                     ║
-     ╚══════════════════════════════════════════╝ -->
+<!-- ── NAVBAR ──────────────────────────────────── -->
 <nav id="navbar">
   <div class="nav-inner">
-    <a class="nav-logo" href="#hero">
-      <img src="images/logo-fm-white.svg" alt="FM" class="nav-logo-img" />
-      <span class="nav-logo-text">
-        <span class="logo-fresh">Fresh</span><span class="logo-minute">Minute</span>
-      </span>
+    <a href="#hero" class="nav-brand">
+      <img src="images/FM_cervena.svg" alt="FM" class="nav-logo-img">
     </a>
-
     <ul class="nav-links">
-      <li><a href="#shows"><span data-lang="cs">Koncerty</span><span data-lang="en">Shows</span></a></li>
+      <li><a href="#shows">Shows</a></li>
       <li><a href="#video">Video</a></li>
-      <li><a href="#listen"><span data-lang="cs">Hudba</span><span data-lang="en">Music</span></a></li>
-      <li><a href="#about"><span data-lang="cs">O kapele</span><span data-lang="en">About</span></a></li>
-      <li><a href="#contact"><span data-lang="cs">Kontakt</span><span data-lang="en">Contact</span></a></li>
-      <li class="lang-switch">
-        <button class="lang-btn" data-set="cs">CZ</button>
-        <span class="lang-sep">/</span>
-        <button class="lang-btn" data-set="en">EN</button>
+      <li>
+        <a href="#music">
+          <span data-lang="cs" class="visible">Hudba</span>
+          <span data-lang="en">Music</span>
+        </a>
+      </li>
+      <li>
+        <a href="#bio">
+          <span data-lang="cs" class="visible">O nás</span>
+          <span data-lang="en">About</span>
+        </a>
+      </li>
+      <li>
+        <a href="#contact">
+          <span data-lang="cs" class="visible">Kontakt</span>
+          <span data-lang="en">Contact</span>
+        </a>
       </li>
     </ul>
-
-    <button class="nav-toggle" id="navToggle" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-right">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-set="cs">CZ</button>
+        <span class="lang-sep">/</span>
+        <button class="lang-btn" data-set="en">EN</button>
+      </div>
+      <button class="hamburger" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#shows">Shows</a>
+    <a href="#video">Video</a>
+    <a href="#music">
+      <span data-lang="cs" class="visible">Hudba</span>
+      <span data-lang="en">Music</span>
+    </a>
+    <a href="#bio">
+      <span data-lang="cs" class="visible">O nás</span>
+      <span data-lang="en">About</span>
+    </a>
+    <a href="#contact">
+      <span data-lang="cs" class="visible">Kontakt</span>
+      <span data-lang="en">Contact</span>
+    </a>
+    <div class="mobile-lang">
+      <button class="lang-btn active" data-set="cs">CZ</button>
+      <span>/</span>
+      <button class="lang-btn" data-set="en">EN</button>
+    </div>
   </div>
 </nav>
 
-<!-- Mobile nav -->
-<div class="nav-mobile" id="mobileNav">
-  <div style="display:flex;align-items:center;gap:12px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.1);margin-bottom:4px;">
-    <img src="images/logo-fm-white.svg" alt="FM" style="height:40px;width:auto;" />
-    <span style="font-family:'Blenny',sans-serif;font-size:22px;color:#fff;">Fresh<span style="color:#FFD000;">Minute</span></span>
+<!-- ── HERO ────────────────────────────────────── -->
+<section id="hero" class="hero">
+  <div class="hero-bg">
+    <img src="images/uvodni.jpg" alt="Fresh Minute" class="hero-photo">
+    <div class="hero-overlay"></div>
   </div>
-  <a href="#shows"><span data-lang="cs">Koncerty</span><span data-lang="en">Shows</span></a>
-  <a href="#video">Video</a>
-  <a href="#listen"><span data-lang="cs">Hudba</span><span data-lang="en">Music</span></a>
-  <a href="#about"><span data-lang="cs">O kapele</span><span data-lang="en">About</span></a>
-  <a href="#contact"><span data-lang="cs">Kontakt</span><span data-lang="en">Contact</span></a>
-  <div class="lang-switch">
-    <button class="lang-btn" data-set="cs">CZ</button>
-    <span class="lang-sep">/</span>
-    <button class="lang-btn" data-set="en">EN</button>
-  </div>
-</div>
-
-
-<!-- ╔══════════════════════════════════════════╗
-     ║  HERO                                    ║
-     ╚══════════════════════════════════════════╝ -->
-<section id="hero">
-  <div class="hero-bg"></div>
-
-  <!-- Decorative elements — circles & dots -->
-  <div class="deco hero-ring-orange"       aria-hidden="true"></div>
-  <div class="deco deco-circle-yellow-lg"  aria-hidden="true"></div>
-  <div class="deco deco-dot-blue"          aria-hidden="true"></div>
-  <div class="deco deco-dot-orange-sm"     aria-hidden="true"></div>
-  <div class="deco deco-dot-yellow-sm"     aria-hidden="true"></div>
-
-  <!-- Coloured stripes — bottom edge -->
-  <div class="hero-stripes" aria-hidden="true">
-    <span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span>
-  </div>
-
   <div class="hero-content">
-    <div class="hero-tag">funk · soul · jazz · Zlín</div>
-
-    <h1 class="hero-title">
-      <span class="line-fresh">Fresh</span>
-      <span class="line-minute">Minute</span>
-    </h1>
-
-    <div class="hero-socials">
-      <a href="https://www.facebook.com/freshminute" target="_blank" rel="noopener" aria-label="Facebook">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-      <a href="https://www.instagram.com/fresh_minute/" target="_blank" rel="noopener" aria-label="Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://www.youtube.com/@freshminute" target="_blank" rel="noopener" aria-label="YouTube">
-        <i class="fab fa-youtube"></i>
-      </a>
-      <a href="#" class="disabled" aria-label="Spotify — coming soon" title="Spotify — coming soon">
-        <i class="fab fa-spotify"></i>
-      </a>
+    <p class="hero-genre">FUNK · SOUL · JAZZ · ZLÍN</p>
+    <img src="images/Fresh_minute_bezova.svg" alt="Fresh Minute" class="hero-wordmark">
+    <div class="hero-dots" aria-hidden="true">
+      <span class="hd hd--a"></span>
+      <span class="hd hd--b"></span>
+      <span class="hd hd--c"></span>
     </div>
-
-    <div class="hero-ctas">
-      <a href="#shows" class="btn btn-primary">
-        <span data-lang="cs">Nadcházející koncerty</span>
-        <span data-lang="en">Upcoming shows</span>
-      </a>
-      <a href="#about" class="btn btn-outline">
-        <span data-lang="cs">O kapele</span>
-        <span data-lang="en">About us</span>
-      </a>
-    </div>
+    <a href="#shows" class="hero-cta">
+      <span data-lang="cs" class="visible">Nadcházející koncerty ↓</span>
+      <span data-lang="en">Upcoming shows ↓</span>
+    </a>
   </div>
-
-  <div class="hero-scroll">scroll</div>
 </section>
 
-
-<!-- ── Colour stripe divider ─────────────────── -->
-<div class="stripe-divider" aria-hidden="true">
-  <span></span><span></span><span></span><span></span>
-  <span></span><span></span><span></span><span></span>
+<!-- ── DECORATIVE STRIP ─────────────────────────── -->
+<div class="pattern-strip" aria-hidden="true">
+  <img src="images/pruh_pod_hero.jpg" alt="">
 </div>
 
-<!-- ╔══════════════════════════════════════════╗
-     ║  SHOWS                                   ║
-     ╚══════════════════════════════════════════╝ -->
-<section id="shows">
-  <!-- Decorations -->
-  <div class="deco shows-ring"  aria-hidden="true"></div>
-  <div class="deco shows-dot-1" aria-hidden="true"></div>
-  <div class="deco shows-dot-2" aria-hidden="true"></div>
-  <div class="container">
-    <div class="section-band">
-      <span class="section-eyebrow orange">
-        <span data-lang="cs">Živá vystoupení</span>
-        <span data-lang="en">Live performances</span>
-      </span>
-      <h2 class="section-heading dark">
-        <span data-lang="cs">Koncerty</span>
-        <span data-lang="en">Shows</span>
-      </h2>
-      <span class="section-underline orange"></span>
-    </div>
+<!-- ── SHOWS ───────────────────────────────────── -->
+<section id="shows" class="shows">
+  <div class="section-inner">
+    <h2 class="section-title shows-title">
+      <em class="t-serif">Fresh</em> <span class="t-inline">SHOWS</span>
+    </h2>
 
-    <!-- Shows list -->
-    <div class="shows-list" id="showsList">
-      <div class="show-item">
+    <div class="shows-list">
+
+      <article class="show-row">
         <div class="show-date">
-          <div class="day">12</div>
-          <div class="month">
-            <span data-lang="cs">Čvn 25</span>
-            <span data-lang="en">Jun 25</span>
-          </div>
+          <b class="show-day">12/7</b>
+          <span class="show-weekday visible" data-lang="cs">pátek</span>
+          <span class="show-weekday" data-lang="en">Friday</span>
         </div>
         <div class="show-info">
-          <h3>Klub Scéna <span class="venue-city">— Zlín</span></h3>
-          <p>
-            <span data-lang="cs">Vstup zdarma · Začátek 20:00</span>
-            <span data-lang="en">Free entry · Doors 20:00</span>
-          </p>
+          <h3 class="show-venue">KLUB SCÉNA – ZLÍN</h3>
+          <p class="show-detail visible" data-lang="cs">Vstup 75 Kč / začátek ve 20:00</p>
+          <p class="show-detail" data-lang="en">Entry 75 CZK / starts at 20:00</p>
         </div>
-        <div class="show-cta">
-          <a href="#contact" class="btn btn-primary">
-            <span data-lang="cs">Více info</span>
-            <span data-lang="en">More info</span>
-          </a>
+        <div class="show-actions">
+          <a href="#" class="show-btn visible" data-lang="cs">více info</a>
+          <a href="#" class="show-btn" data-lang="en">more info</a>
         </div>
-      </div>
+      </article>
 
-      <div class="show-item">
+      <article class="show-row">
         <div class="show-date">
-          <div class="day">19</div>
-          <div class="month">
-            <span data-lang="cs">Čvc 25</span>
-            <span data-lang="en">Jul 25</span>
-          </div>
+          <b class="show-day">23/7</b>
+          <span class="show-weekday visible" data-lang="cs">sobota</span>
+          <span class="show-weekday" data-lang="en">Saturday</span>
         </div>
         <div class="show-info">
-          <h3>Vizovické Trnkobraní <span class="venue-city">— Vizovice</span></h3>
-          <p>
-            <span data-lang="cs">Festival · Letní scéna · 18:30</span>
-            <span data-lang="en">Festival · Summer stage · 18:30</span>
-          </p>
+          <h3 class="show-venue">VIZOVICKÉ TRNKOBRANÍ – VIZOVICE</h3>
+          <p class="show-detail visible" data-lang="cs">Festival / Letní scéna od 20:00</p>
+          <p class="show-detail" data-lang="en">Festival / Summer stage from 20:00</p>
         </div>
-        <div class="show-cta">
-          <a href="#contact" class="btn btn-primary">
-            <span data-lang="cs">Více info</span>
-            <span data-lang="en">More info</span>
-          </a>
+        <div class="show-actions">
+          <a href="#" class="show-btn visible" data-lang="cs">více info</a>
+          <a href="#" class="show-btn" data-lang="en">more info</a>
+          <a href="#" class="show-tag visible" data-lang="cs">festival</a>
+          <a href="#" class="show-tag" data-lang="en">festival</a>
         </div>
-      </div>
+      </article>
 
-      <div class="show-item">
+      <article class="show-row">
         <div class="show-date">
-          <div class="day">6</div>
-          <div class="month">
-            <span data-lang="cs">Zář 25</span>
-            <span data-lang="en">Sep 25</span>
-          </div>
+          <b class="show-day">20/12</b>
+          <span class="show-weekday visible" data-lang="cs">sobota</span>
+          <span class="show-weekday" data-lang="en">Saturday</span>
         </div>
         <div class="show-info">
-          <h3>Café V lese <span class="venue-city">— Praha</span></h3>
-          <p>
-            <span data-lang="cs">Vstup 150 Kč · Začátek 21:00</span>
-            <span data-lang="en">Entry 150 CZK · Doors 21:00</span>
-          </p>
+          <h3 class="show-venue">CAFÉ V LESE – PRAHA</h3>
+          <p class="show-detail visible" data-lang="cs">Vstup 5 Kč / začátek v 21:00</p>
+          <p class="show-detail" data-lang="en">Entry 5 CZK / starts at 21:00</p>
         </div>
-        <div class="show-cta">
-          <a href="#contact" class="btn btn-primary">
-            <span data-lang="cs">Více info</span>
-            <span data-lang="en">More info</span>
-          </a>
+        <div class="show-actions">
+          <a href="#" class="show-btn visible" data-lang="cs">více info</a>
+          <a href="#" class="show-btn" data-lang="en">more info</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── VIDEO ────────────────────────────────────── -->
+<section id="video" class="video-section">
+  <div class="video-wrap">
+    <img src="images/Foto_koncert.jpg" alt="Fresh Minute live" class="video-photo">
+    <div class="video-overlay-dark"></div>
+    <button class="play-btn" aria-label="Přehrát video">
+      <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="40" cy="40" r="37" stroke="white" stroke-width="2.5" fill="rgba(0,0,0,0.35)"/>
+        <polygon points="33,25 60,40 33,55" fill="white"/>
+      </svg>
+    </button>
+  </div>
+</section>
+
+<!-- ── MUSIC ─────────────────────────────────────── -->
+<section id="music" class="music-section">
+  <div class="music-pattern-bg" aria-hidden="true">
+    <img src="images/patern_music.jpg" alt="">
+  </div>
+  <div class="section-inner">
+    <h2 class="section-title music-title">
+      <span class="t-inline">Minute</span> <small class="t-of">OF</small> <span class="t-inline">MUSIC</span>
+    </h2>
+    <div class="albums-grid">
+      <div class="album-card">
+        <div class="album-thumb">
+          <img src="images/minute_music.jpg" alt="To je ta naše">
+        </div>
+        <div class="album-meta">
+          <p class="album-title">To je ta naše</p>
+          <div class="album-links">
+            <a href="#" class="album-ico" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+            <a href="#" class="album-ico" aria-label="Apple Music"><i class="fab fa-apple"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="album-card">
+        <div class="album-thumb">
+          <img src="images/minute_music.jpg" alt="To je ta naše">
+        </div>
+        <div class="album-meta">
+          <p class="album-title">To je ta naše</p>
+          <div class="album-links">
+            <a href="#" class="album-ico" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+            <a href="#" class="album-ico" aria-label="Apple Music"><i class="fab fa-apple"></i></a>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- ╔══════════════════════════════════════════╗
-     ║  VIDEO                                   ║
-     ╚══════════════════════════════════════════╝ -->
-<section id="video">
-  <div class="deco video-ring" aria-hidden="true"></div>
-  <div class="deco video-dot"  aria-hidden="true"></div>
-  <div class="container">
-    <div class="section-band">
-      <span class="section-eyebrow yellow">
-        <span data-lang="cs">Sledujte nás</span>
-        <span data-lang="en">Watch us</span>
-      </span>
-      <h2 class="section-heading white">Video</h2>
-      <span class="section-underline yellow"></span>
-    </div>
-
-    <div class="video-grid">
-      <!-- YouTube embed — odkomentuj a nahraď VIDEO_ID:
-      <div class="video-embed">
-        <iframe
-          src="https://www.youtube.com/embed/VIDEO_ID"
-          title="Fresh Minute — video"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
-      </div>
-      -->
-      <div class="video-placeholder">
-        <span data-lang="cs">Videa budou brzy přidána</span>
-        <span data-lang="en">Videos coming soon</span>
-      </div>
-      <div class="video-placeholder">
-        <span>YouTube · @freshminute</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ╔══════════════════════════════════════════╗
-     ║  LISTEN / MUSIC                          ║
-     ╚══════════════════════════════════════════╝ -->
-<section id="listen">
-  <div class="deco listen-ring"   aria-hidden="true"></div>
-  <div class="deco listen-dot-1"  aria-hidden="true"></div>
-  <div class="deco listen-dot-2"  aria-hidden="true"></div>
-  <div class="container">
-    <div class="section-band">
-      <span class="section-eyebrow navy" style="color:var(--navy);">
-        <span data-lang="cs">Naše nahrávky</span>
-        <span data-lang="en">Our recordings</span>
-      </span>
-      <h2 class="section-heading dark">
-        <span data-lang="cs">Poslechnout</span>
-        <span data-lang="en">Listen</span>
+<!-- ── BIO ──────────────────────────────────────── -->
+<section id="bio" class="bio-section">
+  <div class="section-inner bio-inner">
+    <div class="bio-text">
+      <h2 class="section-title bio-title">
+        <em class="t-serif">Fresh</em> <span class="t-inline">BIO</span>
       </h2>
-      <span class="section-underline navy"></span>
+      <div data-lang="cs" class="visible">
+        <p>Instrumentální funk-soulová kapela s jazzovými kořeny ze Zlína. Fresh Minute tmelí klasické oldschoolové zvuky s moderní interpretací – jejich energie je zakotvena v groovovém základu, stylovém saxofonu a jazzovém pianu.</p>
+        <p>Na pódiu se kapela prezentuje autentickým a svobodným přístupem bez zbytečných přetvářek a jejich koncerty se tak staly nevšedním zážitkem, který nabízí krásnou muzikantskou kvalitu, spontánnost a přirozenou energii.</p>
+        <p>Čtveřici přátel tento autorský jamband oficiálně stvořil v roce 2014.</p>
+      </div>
+      <div data-lang="en">
+        <p>An instrumental funk-soul band with jazz roots from Zlín. Fresh Minute blends classic old-school sounds with a modern interpretation — their energy is grounded in groove, stylish saxophone, and jazz piano.</p>
+        <p>On stage, the band presents itself with an authentic and free-spirited approach — making their concerts an unforgettable experience full of musical craftsmanship, spontaneity, and natural energy.</p>
+        <p>This quartet of friends officially formed the original jamband in 2014.</p>
+      </div>
     </div>
-
-    <div class="listen-inner">
-      <!-- Spotify embed nebo placeholder -->
-      <div>
-        <!--
-          Až bude Spotify, nahraď tímto:
-          <div class="spotify-embed">
-            <iframe
-              src="https://open.spotify.com/embed/artist/ARTIST_ID?utm_source=generator"
-              height="380"
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy">
-            </iframe>
-          </div>
-        -->
-        <div class="spotify-placeholder">
-          <div class="spotify-icon"><i class="fab fa-spotify"></i></div>
-          <h3 data-lang="cs">Spotify — brzy!</h3>
-          <h3 data-lang="en">Spotify — coming soon!</h3>
-          <p data-lang="cs">Mezitím nás najdete na YouTube</p>
-          <p data-lang="en">Find us on YouTube for now</p>
-          <a href="https://www.youtube.com/@freshminute" target="_blank" class="btn btn-yellow" style="margin-top:8px;">
-            YouTube
-          </a>
-        </div>
-      </div>
-
-      <!-- Albums side -->
-      <div class="albums-side">
-        <p class="members-label">
-          <span data-lang="cs">Alba &amp; nahrávky</span>
-          <span data-lang="en">Albums &amp; recordings</span>
-        </p>
-
-        <!-- Sem přidej alba:
-        <div class="album-card">
-          <div class="album-thumb"><i class="fas fa-music"></i></div>
-          <div class="album-info">
-            <h4>Název alba</h4>
-            <p>Rok · EP / Album</p>
-          </div>
-        </div>
-        -->
-        <div class="album-card">
-          <div class="album-thumb"><i class="fas fa-compact-disc"></i></div>
-          <div class="album-info">
-            <h4 data-lang="cs">Nahrávky v přípravě</h4>
-            <h4 data-lang="en">Recordings in progress</h4>
-            <p data-lang="cs">Sledujte naše sítě</p>
-            <p data-lang="en">Follow our socials</p>
-          </div>
-        </div>
-      </div>
+    <div class="bio-photo">
+      <img src="images/bio.jpg" alt="Fresh Minute">
     </div>
   </div>
 </section>
 
+<!-- ── MEMBERS ───────────────────────────────────── -->
+<section id="members" class="members-section">
+  <div class="section-inner">
+    <div class="members-grid">
 
-<!-- ╔══════════════════════════════════════════╗
-     ║  ABOUT / THE BAND                        ║
-     ╚══════════════════════════════════════════╝ -->
-<section id="about">
-  <div class="deco about-ring"   aria-hidden="true"></div>
-  <div class="deco about-dot-1"  aria-hidden="true"></div>
-  <div class="deco about-dot-2"  aria-hidden="true"></div>
-  <div class="container">
-    <div class="section-band">
-      <span class="section-eyebrow yellow">
-        <span data-lang="cs">Kdo jsme</span>
-        <span data-lang="en">Who we are</span>
-      </span>
-      <h2 class="section-heading white">
-        <span data-lang="cs">O kapele</span>
-        <span data-lang="en">The Band</span>
-      </h2>
-      <span class="section-underline yellow"></span>
-    </div>
-
-    <div class="about-inner">
-      <!-- Bio -->
-      <div class="bio-text">
-        <div data-lang="cs">
-          <p>
-            <strong>Fresh Minute</strong> je instrumentální funk-soulová kapela s prorostlými zlínskými kořeny,
-            která tmelí klasické oldschoolové zvuky s volnější interpretací. Jejich zábavné a příběhové hudební
-            témata jsou postavena na groovovém základu, stylovém saxofonu a najazzlém pianu.
-          </p>
-          <p>
-            Na pódiu se kapela prezentuje autentickým a uvolněným přístupem bez zbytečné přetvářky —
-            jejich koncerty nabízejí muzikantskou kvalitu, dávku vtipu, nadhledu a přirozené energie.
-          </p>
-          <p>
-            Dlouholetí přátelé tento autorský jamband oficiálně vytvořili <strong>v létě 2014</strong>.
-          </p>
-          <span class="bio-genre-tag">funk · soul · jazz / Zlín</span>
+      <article class="member-card">
+        <div class="member-img-wrap">
+          <img src="images/clen_1.jpg" alt="Jan Laník">
         </div>
-
-        <div data-lang="en">
-          <p>
-            <strong>Fresh Minute</strong> is an instrumental funk-soul band rooted in Zlín, Czech Republic,
-            blending classic old-school sounds with a free-spirited interpretation. Their entertaining and
-            story-driven themes are built on a groovy foundation, stylish saxophone and jazzy piano.
-          </p>
-          <p>
-            On stage, the band brings an authentic and relaxed attitude — no pretence, just music.
-            Their concerts combine musical quality with humour, perspective and natural energy.
-          </p>
-          <p>
-            Long-time friends, they officially formed this original jamband in <strong>summer 2014</strong>.
-          </p>
-          <span class="bio-genre-tag">funk · soul · jazz / Zlín</span>
+        <div class="member-caption">
+          <span class="member-instrument">
+            <span data-lang="cs" class="visible">Piano</span>
+            <span data-lang="en">Piano</span>
+          </span>
+          <h3 class="member-name">Jan Laník</h3>
         </div>
-      </div>
+      </article>
 
-      <!-- Members -->
-      <div>
-        <p class="members-label">
-          <span data-lang="cs">Členové kapely</span>
-          <span data-lang="en">Band members</span>
-        </p>
-        <div class="members-grid">
-
-          <div class="member-card">
-            <div class="member-photo">
-              <!-- <img src="images/vojtechpalisa.jpg" alt="Vojtěch Palisa" /> -->
-              <div class="photo-placeholder">
-                <i class="fas fa-user"></i>
-                <span>foto</span>
-              </div>
-            </div>
-            <div class="member-info">
-              <p class="member-instrument"><span data-lang="cs">Saxofon</span><span data-lang="en">Saxophone</span></p>
-              <p class="member-name">Vojtěch Palisa</p>
-            </div>
-          </div>
-
-          <div class="member-card">
-            <div class="member-photo">
-              <div class="photo-placeholder">
-                <i class="fas fa-user"></i>
-                <span>foto</span>
-              </div>
-            </div>
-            <div class="member-info">
-              <p class="member-instrument"><span data-lang="cs">Klávesy</span><span data-lang="en">Keyboards</span></p>
-              <p class="member-name">Jan Laník</p>
-            </div>
-          </div>
-
-          <div class="member-card">
-            <div class="member-photo">
-              <div class="photo-placeholder">
-                <i class="fas fa-user"></i>
-                <span>foto</span>
-              </div>
-            </div>
-            <div class="member-info">
-              <p class="member-instrument"><span data-lang="cs">Baskytara</span><span data-lang="en">Bass guitar</span></p>
-              <p class="member-name">Jakub Lutner</p>
-            </div>
-          </div>
-
-          <div class="member-card">
-            <div class="member-photo">
-              <div class="photo-placeholder">
-                <i class="fas fa-user"></i>
-                <span>foto</span>
-              </div>
-            </div>
-            <div class="member-info">
-              <p class="member-instrument"><span data-lang="cs">Bicí</span><span data-lang="en">Drums</span></p>
-              <p class="member-name">Petr Ptáček</p>
-            </div>
-          </div>
-
+      <article class="member-card">
+        <div class="member-img-wrap">
+          <img src="images/clen_2.jpg" alt="Vojtěch Palisa">
         </div>
-      </div>
+        <div class="member-caption">
+          <span class="member-instrument">
+            <span data-lang="cs" class="visible">Saxofon</span>
+            <span data-lang="en">Saxophone</span>
+          </span>
+          <h3 class="member-name">Vojtěch Palisa</h3>
+        </div>
+      </article>
+
+      <article class="member-card">
+        <div class="member-img-wrap">
+          <img src="images/clen_3.jpg" alt="Jakub Lutner">
+        </div>
+        <div class="member-caption">
+          <span class="member-instrument">
+            <span data-lang="cs" class="visible">Kytara</span>
+            <span data-lang="en">Guitar</span>
+          </span>
+          <h3 class="member-name">Jakub Lutner</h3>
+        </div>
+      </article>
+
+      <article class="member-card">
+        <div class="member-img-wrap">
+          <img src="images/clen_4.jpg" alt="Petr Ptáček">
+        </div>
+        <div class="member-caption">
+          <span class="member-instrument">
+            <span data-lang="cs" class="visible">Bicí</span>
+            <span data-lang="en">Drums</span>
+          </span>
+          <h3 class="member-name">Petr Ptáček</h3>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
 
-
-<!-- ── Colour stripe divider ─────────────────── -->
-<div class="stripe-divider" aria-hidden="true">
-  <span></span><span></span><span></span><span></span>
-  <span></span><span></span><span></span><span></span>
-</div>
-
-<!-- ╔══════════════════════════════════════════╗
-     ║  CONTACT                                 ║
-     ╚══════════════════════════════════════════╝ -->
-<section id="contact">
-  <div class="deco contact-ring"   aria-hidden="true"></div>
-  <div class="deco contact-dot-1"  aria-hidden="true"></div>
-  <div class="deco contact-dot-2"  aria-hidden="true"></div>
-  <div class="container">
-    <div class="section-band">
-      <span class="section-eyebrow orange">
-        <span data-lang="cs">Napište nám</span>
-        <span data-lang="en">Get in touch</span>
-      </span>
-      <h2 class="section-heading dark">
-        <span data-lang="cs">Kontakt &amp; Booking</span>
-        <span data-lang="en">Contact &amp; Booking</span>
-      </h2>
-      <span class="section-underline orange"></span>
+<!-- ── GALLERY ───────────────────────────────────── -->
+<section id="gallery" class="gallery-section">
+  <div class="gallery-grid">
+    <div class="gallery-item gi--wide">
+      <img src="images/Foto_koncert.jpg" alt="Fresh Minute live">
     </div>
-
-    <div class="contact-inner">
-      <div class="contact-info">
-
-        <div class="contact-item">
-          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-          <div class="contact-detail">
-            <h4>E-mail</h4>
-            <a href="mailto:my.freshminute@gmail.com">my.freshminute@gmail.com</a>
-          </div>
-        </div>
-
-        <div class="contact-item">
-          <div class="contact-icon"><i class="fas fa-phone"></i></div>
-          <div class="contact-detail">
-            <h4><span data-lang="cs">Telefon</span><span data-lang="en">Phone</span></h4>
-            <a href="tel:+420775604048">+420 775 604 048</a>
-          </div>
-        </div>
-
-        <div class="contact-item">
-          <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-          <div class="contact-detail">
-            <h4><span data-lang="cs">Základna</span><span data-lang="en">Home base</span></h4>
-            <p>Zlín, Czech Republic</p>
-          </div>
-        </div>
-
-        <div>
-          <p style="font-family:var(--font-heading);font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:12px;">
-            <span data-lang="cs">Sociální sítě</span>
-            <span data-lang="en">Social media</span>
-          </p>
-          <div class="contact-socials">
-            <a href="https://www.facebook.com/freshminute" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/fresh_minute/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.youtube.com/@freshminute" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="#" class="disabled" aria-label="Spotify – coming soon"><i class="fab fa-spotify"></i></a>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Form -->
-      <form class="contact-form" action="mailto:my.freshminute@gmail.com" method="get">
-        <div class="form-group">
-          <label for="name"><span data-lang="cs">Jméno</span><span data-lang="en">Name</span></label>
-          <input type="text" id="name" name="name" required autocomplete="name" />
-        </div>
-        <div class="form-group">
-          <label for="email">E-mail</label>
-          <input type="email" id="email" name="email" required autocomplete="email" />
-        </div>
-        <div class="form-group">
-          <label for="subject"><span data-lang="cs">Předmět</span><span data-lang="en">Subject</span></label>
-          <input type="text" id="subject" name="subject" />
-        </div>
-        <div class="form-group">
-          <label for="message"><span data-lang="cs">Zpráva</span><span data-lang="en">Message</span></label>
-          <textarea id="message" name="body" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">
-          <span data-lang="cs">Odeslat zprávu</span>
-          <span data-lang="en">Send message</span>
-        </button>
-      </form>
+    <div class="gallery-item">
+      <img src="images/clen_1.jpg" alt="">
+    </div>
+    <div class="gallery-item">
+      <img src="images/clen_3.jpg" alt="">
+    </div>
+    <div class="gallery-item">
+      <img src="images/uvodni.jpg" alt="">
+    </div>
+    <div class="gallery-item">
+      <img src="images/clen_2.jpg" alt="">
+    </div>
+    <div class="gallery-item">
+      <img src="images/bio.jpg" alt="">
+    </div>
+    <div class="gallery-item">
+      <img src="images/clen_4.jpg" alt="">
     </div>
   </div>
 </section>
 
-
-<!-- ╔══════════════════════════════════════════╗
-     ║  FOOTER                                  ║
-     ╚══════════════════════════════════════════╝ -->
-<footer>
-  <div class="container">
-    <div class="footer-inner">
-      <div class="footer-logo">
-        <img src="images/logo-fm-white.svg" alt="FM" />
-        Fresh<span class="logo-minute">Minute</span>
+<!-- ── FOOTER / CONTACT ──────────────────────────── -->
+<footer id="contact" class="footer">
+  <div class="footer-inner">
+    <h2 class="footer-title">
+      <span data-lang="cs" class="visible">KONTAKT / BOOKING</span>
+      <span data-lang="en">CONTACT / BOOKING</span>
+    </h2>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="mailto:my@freshminute.eu" class="footer-link">my@freshminute.eu</a>
+        <a href="tel:+420775604048" class="footer-link">775 604 048</a>
       </div>
-      <nav class="footer-links">
-        <a href="#shows"><span data-lang="cs">Koncerty</span><span data-lang="en">Shows</span></a>
-        <a href="#video">Video</a>
-        <a href="#listen"><span data-lang="cs">Hudba</span><span data-lang="en">Music</span></a>
-        <a href="#about"><span data-lang="cs">O kapele</span><span data-lang="en">About</span></a>
-        <a href="#contact"><span data-lang="cs">Kontakt</span><span data-lang="en">Contact</span></a>
-      </nav>
-      <p class="footer-copy">
-        &copy; <span id="year"></span> Fresh Minute · funk · soul · jazz · Zlín
-      </p>
+      <div class="footer-col">
+        <a href="#" class="footer-link">Facebook</a>
+        <a href="#" class="footer-link">Youtube</a>
+      </div>
+      <div class="footer-col">
+        <a href="#" class="footer-link">Instagram</a>
+        <a href="#" class="footer-link">Spotify</a>
+      </div>
+    </div>
+    <div class="footer-logo-wrap">
+      <img src="images/FM_paticka.svg" alt="Fresh Minute" class="footer-logo">
     </div>
   </div>
 </footer>
 
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 <script src="js/main.js"></script>
 </body>
 </html>
